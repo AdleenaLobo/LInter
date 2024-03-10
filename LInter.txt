@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    int n = 0 ;
+	    Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the no");
+        n = sc.nextInt();
+        int []x = new int[n];
+        int []y = new int[n];
+        for(int i = 0 ; i<n; i++){
+            System.out.println("Enter the"+(i+1)+"value of x");
+            x[i] = sc.nextInt();
+            System.out.println("Enter the"+(i+1)+"value of y");
+            y[i] = sc.nextInt();
+        }
+        int xc = 0;
+        System.out.println("Enter for value xc");
+        xc = sc.nextInt();
+        
+        float ans = 0;
+        for(int i = 0 ; i <n ; i++){
+            float a=1;
+            for(int j = 0 ; j<n;j++){
+                if(i!=j){
+                    a = a*(xc - x[j])/(x[i]- x[j]);
+                    
+                }
+            }
+            ans += a*y[i];
+        }
+        System.out.println("Answer is "+ ans);
+        sc.close();
+        
+	}
+}
